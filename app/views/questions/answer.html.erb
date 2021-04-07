@@ -1,0 +1,9 @@
+<p><%= @question %></p>
+
+<% answer = nil %>
+<% while answer != ""%>
+<% print "> "%>
+<% message = gets.chomp%>
+<% answer = coach_answer_enhanced(message) %>
+<%=@answer%>
+<% end %>
