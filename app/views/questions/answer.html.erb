@@ -1,9 +1,19 @@
-<p><%= @question %></p>
+<h3 class="mt-2 mb-4 display-4" style="font-size: 32px; color: #383838;">Stupid Coaching</h3>
 
-<% answer = nil %>
-<% while answer != ""%>
-<% print "> "%>
-<% message = gets.chomp%>
-<% answer = coach_answer_enhanced(message) %>
-<%=@answer%>
+<div>
+  <h4 class="display-4 mb-2 px-2" style="font-size: 24px; color: ##383838;"><%= @question %></h4>
+  <p class="display-4 mt-3 px-2" style="font-size: 16px; color: #383838;">- You</p>
+</div>
+
+
+
+<% if @question.match(/\w*\?{1}/) %>
+<h4 class="display-4 mb-2 px-2" style="font-size: 24px; color: ##383838;"><%= "Silly question, get dressed and go to work!" %></h4>
+<% elsif @question.match(/I am going to work/) %>
+<h4 class="display-4 mb-2 px-2" style="font-size: 24px; color: ##383838;"><%= "Great" %></h4>
+<% else %>
+<h4 class="display-4 mb-2 px-2" style="font-size: 24px; color: ##383838;"><%= "I don't care, get dressed and go to work!" %></h4>
 <% end %>
+<p class="display-4 mt-3 px-2" style="font-size: 16px; color: #383838;">- Your coach</p>
+
+<%= link_to "Ask a new question", "ask" %>
